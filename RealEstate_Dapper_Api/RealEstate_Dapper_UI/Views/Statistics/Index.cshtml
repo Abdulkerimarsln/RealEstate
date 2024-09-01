@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Aktif Kategori</p>
+                    <h6 class="mb-0">@ViewBag.activeCategoryCount</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Aktif Satıcı</p>
+                    <h6 class="mb-0">@ViewBag.ActiveEmployeeCount</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-area fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Bina Sayısı</p>
+                    <h6 class="mb-0">@ViewBag.ApartmentCount</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">En Yüksek Kira</p>
+                    <h6 class="mb-0">@ViewBag.AverageProductByRent</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">En Yüksek Satılık</p>
+                    <h6 class="mb-0">@ViewBag.AverageProductBySale</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Ortalama Oda Sayısı</p>
+                    <h6 class="mb-0">@ViewBag.AverageRoomCount</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-area fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Kategori Sayısı</p>
+                    <h6 class="mb-0">@ViewBag.CategoryCount</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">En Çok İlan Bulunan Kategori</p>
+                    <h6 class="mb-0">@ViewBag.CategoryNameByMaxProductCount</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">En Çok İlana Sahip Olan Kullanıcı</p>
+                    <h6 class="mb-0">@ViewBag.EmployeeNameByMaxProductCount</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Son Ürün Fiyatı</p>
+                    <h6 class="mb-0">@ViewBag.LastProductPrice</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-area fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">En Yeni Bina Yaşı</p>
+                    <h6 class="mb-0">@ViewBag.NewestBuildingYear</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">En Eski Bina Yaşı</p>
+                    <h6 class="mb-0">@ViewBag.OldestBuildingYear</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Kapalı Kategori Sayısı</p>
+                    <h6 class="mb-0">@ViewBag.PassiveCategoryCount</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">İlan Sayısı</p>
+                    <h6 class="mb-0">@ViewBag.ProductCount</h6>
+                </div>
+            </div>
+        </div>       
+    </div>
+</div>

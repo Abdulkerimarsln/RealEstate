@@ -1,0 +1,101 @@
+﻿@model List<ResultEstateAgentDashboardChartDto>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <!-- İlk Grafik -->
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Şehir İlan İstatistiği</h6>
+                    <a href="">Tümünü Göster</a>
+                </div>
+                <canvas id="myChart" style="width:100%;max-width:500px"></canvas>
+                <!-- Verileri burada saklıyoruz -->
+                <div id="chartData"
+                     data-cities="@string.Join(",", Model.Select(x => x.City))"
+                     data-counts="@string.Join(",", Model.Select(x => x.CityCount))">
+                </div>
+            </div>
+        </div>
+
+        <!-- İkinci Grafik -->
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Şehir İlan İstatistiği</h6>
+                    <a href="">Tümünü Göster</a>
+                </div>
+                <canvas id="myChart1" style="width:100%;max-width:500px"></canvas>
+                <!-- Verileri burada saklıyoruz -->
+                <div id="chartData1"
+                     data-cities="@string.Join(",", Model.Select(x => x.City))"
+                     data-counts="@string.Join(",", Model.Select(x => x.CityCount))">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // İlk grafik için verileri al
+        const chartDataElement = document.getElementById('chartData');
+        const cities = chartDataElement.getAttribute('data-cities').split(',');
+        const counts = chartDataElement.getAttribute('data-counts').split(',').map(Number);
+
+        // Grafik renkleri, veri sayısına göre ayarlama
+        const barColors = [
+            "rgb(255, 178, 208)", "rgb(202, 178, 255)", "rgb(160, 178, 255)",
+            "rgb(90, 178, 255)", "rgb(90, 178, 205)", "rgb(90, 178, 240)"
+        ];
+        // Renkleri veri sayısına göre tekrar kullanmak
+        const backgroundColors = cities.map((_, index) => barColors[index % barColors.length]);
+
+        // İlk grafiği oluştur
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: cities,
+                datasets: [{
+                    backgroundColor: backgroundColors, // Renkleri ayarla
+                    data: counts
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Şehir İlan İstatistiği"
+                }
+            }
+        });
+
+        // İkinci grafik için verileri al
+        const chartDataElement1 = document.getElementById('chartData1');
+        const cities1 = chartDataElement1.getAttribute('data-cities').split(',');
+        const counts1 = chartDataElement1.getAttribute('data-counts').split(',').map(Number);
+
+        // Grafik renkleri, veri sayısına göre ayarlama
+        const backgroundColors1 = cities1.map((_, index) => barColors[index % barColors.length]);
+
+        // İkinci grafiği oluştur
+        new Chart("myChart1", {
+            type: "bar",
+            data: {
+                labels: cities1,
+                datasets: [{
+                    backgroundColor: backgroundColors1, // Renkleri ayarla
+                    data: counts1
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Şehir İlan İstatistiği"
+                }
+            }
+        });
+    });
+</script>

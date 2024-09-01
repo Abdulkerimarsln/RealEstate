@@ -1,0 +1,55 @@
+﻿@model List<RealEstate_Dapper_UI.Dtos.MessageDtos.ResultinBoxMessageDto>
+
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="fa fa-envelope me-lg-2"></i>
+        <span class="d-none d-lg-inline-flex">Mesajlar</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+        @foreach (var item in Model)
+        {
+            var currentDate = DateTime.Now;
+            var sendDate = (DateTime)item.SendDate;
+            var timeSpan = currentDate - sendDate;
+
+            string timeAgo;
+            if (timeSpan.TotalDays > 365)
+            {
+                timeAgo = $"{(int)(timeSpan.TotalDays / 365)} yıl önce";
+            }
+            else if (timeSpan.TotalDays > 30)
+            {
+                timeAgo = $"{(int)(timeSpan.TotalDays / 30)} ay önce";
+            }
+            else if (timeSpan.TotalDays > 1)
+            {
+                timeAgo = $"{(int)timeSpan.TotalDays} gün önce";
+            }
+            else if (timeSpan.TotalHours > 1)
+            {
+                timeAgo = $"{(int)timeSpan.TotalHours} saat önce";
+            }
+            else if (timeSpan.TotalMinutes > 1)
+            {
+                timeAgo = $"{(int)timeSpan.TotalMinutes} dakika önce";
+            }
+            else
+            {
+                timeAgo = "şimdi";
+            }
+
+            <a href="#" class="dropdown-item">
+                <div class="d-flex align-items-center">
+                    <img class="rounded-circle" src="~/dashmin-1.0.0/img/testimonial-2.jpg " alt="" style="width: 40px; height: 40px;">
+                    <div class="ms-2">
+                        <h6 class="fw-normal mb-0">@item.Name Bir Mesaj Yazdı</h6>
+                        <small>@timeAgo</small>
+                    </div>
+                </div>
+            </a>
+            <hr class="dropdown-divider">
+        }
+
+        <a href="#" class="dropdown-item text-center">See all message</a>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model List<RealEstate_Dapper_UI.Dtos.ProductDtos.ResultLast3ProductWithCategoryDto>
+
+<div class="w3l-news" id="news">
+    <section id="grids5-block" class="py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <h3 class="title-big text-center">Eklenen Son 3 Yeni İlan</h3>
+            <div class="row mt-lg-5 mt-4 pt-3">
+                @foreach(var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-4">
+                        <div class="grids5-info">
+                            <span class="posted-date">
+                                <a href="#blog-single">
+                                    <span class="small">@item.AdvertisementDate.ToString("yyyy")</span>
+                                    <span class="big">@item.AdvertisementDate.ToString("dd")</span>
+                                    <span class="small">@item.AdvertisementDate.ToString("MMM")</span>
+                                </a>
+                            </span>
+                            <a href="#blog-single" class="d-block zoom">
+                                <img src="@item.CoverImage" alt=""
+                                     class="img-fluid news-image" style="height:250px;" />
+                            </a>
+                            <div class="blog-info">
+                                <a href="#category" class="category">@item.CategoryName</a>
+                                <h4><a href="#blog-single">@item.title</a></h4>
+                                <p>
+                                    @(string.IsNullOrEmpty(item.Destcription)
+                                        ? ""
+                                        : item.Destcription.Length > 100
+                                        ? item.Destcription.Substring(0, 100) + "..."
+                                        : item.Destcription)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+               
+            </div>
+        </div>
+    </section>
+</div>
