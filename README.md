@@ -1,4 +1,4 @@
-# RealEState - Emlak Yönetim Platformu
+# RealEstate - Emlak Yönetim Platformu
 
 RealEState, kullanıcıların ev ilanlarını kolayca yönetebileceği ve filtreleyebileceği modern bir emlak yönetim platformudur. Hem üye olan hem de üye olmayan ziyaretçilere yönelik çeşitli işlevler sunar.
 
