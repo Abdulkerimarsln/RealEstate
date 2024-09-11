@@ -1,23 +1,41 @@
-# RealEstate API with Dapper
+# RealEState - Emlak Yönetim Platformu
 
-This is a Real Estate project built using **ASP.NET Core** and **Dapper** for data access. The API allows you to manage real estate properties, users, and transactions.
+RealEState, kullanıcıların ev ilanlarını kolayca yönetebileceği ve filtreleyebileceği modern bir emlak yönetim platformudur. Hem üye olan hem de üye olmayan ziyaretçilere yönelik çeşitli işlevler sunar.
 
-## Features
+## Proje Hakkında
 
-- Property listings
-- User management (Authentication and Authorization)
-- Transaction handling
-- RESTful API
+RealEState, ASP.NET Core 8.0 ve diğer modern teknolojiler kullanılarak geliştirilmiştir. Proje, kullanıcılara ilan verme, ilanları görüntüleme ve filtreleme gibi temel işlevlerin yanı sıra güvenli kimlik doğrulama ve canlı veri takibi gibi gelişmiş özellikler sunar.
 
-## Technologies
+## Öne Çıkan Özellikler
 
-- ASP.NET Core
-- Dapper
-- SQL Server
+- **Üyelik ve İlan Yönetimi:** Kullanıcılar, üyelik oluşturarak kendi ilanlarını verebilir veya üye olmadan ilanları görüntüleyebilir.
+- **Filtreleme ve Detay Görüntüleme:** İlanlar filtrelenebilir ve detaylı olarak görüntülenebilir.
+- **Seo Dostu URL’ler:** SEO optimizasyonu için slug URL yapısı kullanılmıştır.
+- **Canlı Veri Takibi:** SignalR ile ilan güncellemeleri ve veri değişiklikleri gerçek zamanlı olarak takip edilebilir.
+- **Güvenli Kimlik Doğrulama:** JSON Web Token (JWT) ile kullanıcı kimlikleri güvence altına alınmıştır.
+- **İstatistiksel Analizler:** Admin paneli üzerinden site performansı ve kullanıcı etkileşimleri hakkında detaylı istatistikler sunulmaktadır.
 
-## Setup
+## Kullanılan Teknolojiler
 
-1. Clone the repository
-2. Configure the connection string in `appsettings.json`
-3. Run the migrations and start the API
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
+- **Backend:** C#, MSSQL, Dapper, Entity Framework, SignalR
+- **Geliştirme Araçları:** Swagger (API dokümantasyonu)
 
+## Teknik Özellikler
+
+- **ASP.NET Core 8.0:** Modern web geliştirme için güçlü bir framework.
+- **ASP.NET Web API ve MVC:** API üzerinden CRUD işlemleri ve MVC yapısında tüketim.
+- **Dapper:** Hızlı ve verimli veri erişimi.
+- **Entity Framework Code First:** Dinamik veritabanı yönetimi ve modelleme.
+- **DataProtector:** Veri güvenliği için karmaşık veri ID’leri.
+- **Onion Architecture:** Modüler ve sürdürülebilir kod yapısı.
+- **CQRS ve Mediator:** Komut ve sorgu ayrımı ile düzenli kod yapısı.
+- **Repository Design Pattern:** Veri erişiminde soyutlama.
+- **AutoMapper:** Sınıflar arası veri transferi.
+
+## Kurulum ve Çalıştırma
+
+1. **Proje Klonlama:**
+
+   ```bash
+   git clone https://github.com/Abdulkerimarsln/RealEstate
