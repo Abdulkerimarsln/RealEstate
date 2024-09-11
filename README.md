@@ -39,3 +39,13 @@ RealEState, ASP.NET Core 8.0 ve diğer modern teknolojiler kullanılarak gelişt
 
    ```bash
    git clone https://github.com/Abdulkerimarsln/RealEstate
+
+
+![Resim Açıklaması](https://github.com/Abdulkerimarsln/RealEstate/blob/main/assets/1.png)
+![Resim Açıklaması](https://github.com/Abdulkerimarsln/RealEstate/blob/main/assets/2.png)
+![Resim Açıklaması](https://github.com/Abdulkerimarsln/RealEstate/blob/main/assets/3.png)
+![Resim Açıklaması](https://github.com/Abdulkerimarsln/RealEstate/blob/main/assets/4.png)
+![Resim Açıklaması](https://github.com/Abdulkerimarsln/RealEstate/blob/main/assets/5.png)
+![Resim Açıklaması](https://github.com/Abdulkerimarsln/RealEstate/blob/main/assets/6.png)
+![Resim Açıklaması](https://github.com/Abdulkerimarsln/RealEstate/blob/main/assets/7.png)
+
